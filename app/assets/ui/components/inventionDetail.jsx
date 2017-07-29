@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 export default class InventionDetail extends React.Component {
   render() {
     let _invention;

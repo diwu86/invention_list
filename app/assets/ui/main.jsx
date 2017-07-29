@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import InventionBox from './components/InventionBox';
 import InventionList from './components/InventionList';
 import InventionDetail from './components/InventionDetail';

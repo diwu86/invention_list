@@ -2,20 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { WithContext as ReactTags } from 'react-tag-input';
 
-export default class OtherMaterial extends React.Component {
+export default class Bit extends React.Component {
   constructor(props) {
     super(props);
-    let _other_matertials = ["bargraph","bend-sensor","branch","bright-led"];
-    // $.ajax("/other_materials")
-    // .success( data => _other_matertials = data.map(e => {
-    //   return e.name
-    // }))
-    // .error( error => console.log(error));
-
     this.state = {
         tags: [],
-        suggestions: _other_matertials
+        bitsSuggestions: []
     };
+    
     this.handleDelete = this.handleDelete.bind(this);
     this.handleAddition = this.handleAddition.bind(this);
     this.handleDrag = this.handleDrag.bind(this);
@@ -34,15 +28,14 @@ export default class OtherMaterial extends React.Component {
   handleAddition(tag) {
     tag = tag.replace("_","-")
     let tags = this.state.tags;
-    // Do not add duplicates
-    if (!tags.map(t => { return t.text}).includes(tag)){
+    // bit has to be from the suggestted bits and should not include duplicates
+    if (this.state.bitsSuggestions.includes(tag) && !tags.map(t => { return t.text}).includes(tag)){
       tags.push({
           id: tags.length + 1,
           text: tag
       });
     }
     this.setState({tags: tags});
-
   }
 
   handleDrag(tag, currPos, newPos) {
@@ -57,29 +50,29 @@ export default class OtherMaterial extends React.Component {
   }
 
   componentDidMount(){
-    $.ajax("/other_materials")
-    .success(data => this.setState({suggestions: data}))
+    $.ajax("/bits")
+    .success(data => this.setState({bitsSuggestions: data}))
     .error(error => console.log(error));
   }
 
   render(){
-    const { tags, suggestions } = this.state;
+    const { tags, bitsSuggestions } = this.state;
     const Keys = { COMMA : 188, SPACE: 32};
-    let delimiters = [Keys.COMMA, Keys.SPACE];
-    let placeholder = "Add another material";
+    let _delimiters = [Keys.COMMA, Keys.SPACE];
+    let placeholder = "Add another bit";
     let autocomplete = true;
     return (
-        <div className="input-field col s6">
-          <ReactTags tags={tags}
-            ref="otherMaterialTags"
-            suggestions={suggestions}
+
+      <div className="input-field col s6">
+          <ReactTags tags={tags} ref="bits"
+            suggestions={bitsSuggestions}
             handleDelete={this.handleDelete}
             handleAddition={this.handleAddition}
             handleDrag={this.handleDrag}
-            delimiters={delimiters}
-            placeholder={placeholder}
-            autocomplete={autocomplete} />
-        </div>
+            delimiters={_delimiters}
+            autocomplete={autocomplete}
+            placeholder={placeholder} />
+      </div>
     )
   }
 }

@@ -6,14 +6,23 @@ class InventionsController < ApplicationController
 
   def create
     other_materials = params[:other_materials].map{ |k,v| v }.map{ |e| e[:text] }
+    bits = params[:bits].map{ |k,v| v }.map{ |e| e[:text] }
     invention = Invention.new(title: params[:title], description: params[:description], user_name: params[:user_name],
                                  email: params[:email])
-    oms = []
+    other_materials_related = []
     other_materials.each do |om|
       other_material = OtherMaterial.find_or_create_by(name: om)
-      oms << other_material
+      other_materials_related << other_material
     end
-    invention.other_materials = oms
+    invention.other_materials = other_materials_related
+
+    bits_related = []
+    bits.each do |b|
+      bit = Bit.find_by(name: b)
+      bits_related << bit
+    end
+    invention.bits = bits_related
+
     invention.save
     render json: invention
   end

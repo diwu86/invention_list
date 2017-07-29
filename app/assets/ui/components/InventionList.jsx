@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Invention from "./Invention"
 
 export default class InventionList extends React.Component {
