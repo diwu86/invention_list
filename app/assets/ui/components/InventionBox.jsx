@@ -1,3 +1,5 @@
+import OtherMaterial from './otherMaterial';
+
 export default class InventionBox extends React.Component {
 
   postInvention(event){
@@ -5,7 +7,8 @@ export default class InventionBox extends React.Component {
     let invention = {title: this.refs.inventionTitle.value,
                      description: this.refs.inventionDescription.value,
                      user_name: this.refs.inventionUserName.value,
-                     email: this.refs.inventionEmail.value
+                     email: this.refs.inventionEmail.value,
+                     other_materials: this.refs.inventionOtherMaterials.refs.otherMaterialTags.props.tags
                      };
     this.props.postInvention(invention);
     this.refs.inventionTitle.value = '';
@@ -13,7 +16,7 @@ export default class InventionBox extends React.Component {
     this.refs.inventionUserName.value = '';
     this.refs.inventionEmail.value = '';
     this.refs.inventionBits.value = '';
-    this.refs.inventionOtherMaterials.value = '';
+    this.refs.inventionOtherMaterials.clearTags();
   }
 
   render() {
@@ -48,12 +51,7 @@ export default class InventionBox extends React.Component {
                <label for="bits">Bits used</label>
              </div>
            </div>
-           <div className="row">
-             <div className="input-field col s12">
-               <input ref="inventionOtherMaterials" name="other_material" type="text" className="validate" />
-               <label for="other_material">Other Material</label>
-             </div>
-           </div>
+           <OtherMaterial ref="inventionOtherMaterials" />
            <button type="submit" className="btn right">Submit</button>
          </form>
        </div>

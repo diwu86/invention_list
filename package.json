@@ -26,6 +26,9 @@
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "react": "^15.0.0",
+    "react-dom": "^0.14.0",
+    "react-tag-input": "^4.7.2",
     "webpack": "^3.4.1"
   }
 }
