@@ -1,7 +1,7 @@
-export default class Greet extends React.Component {
+export default class Invention extends React.Component {
   render() {
     return (
-      <h1>Hello from the greet</h1>
+      <a href={"/inventions/" +this.props.id} className="collection-item">{this.props.title}</a>
     );
   }
 }
