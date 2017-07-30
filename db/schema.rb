@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730145500) do
+ActiveRecord::Schema.define(version: 20170730142731) do
 
   create_table "bits", force: :cascade do |t|
     t.string   "name"
@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20170730145500) do
     t.integer "bit_id",       null: false
     t.index ["bit_id", "invention_id"], name: "index_bits_inventions_on_bit_id_and_invention_id"
     t.index ["invention_id", "bit_id"], name: "index_bits_inventions_on_invention_id_and_bit_id"
-  end
-
-  create_table "images", force: :cascade do |t|
-    t.string   "location"
-    t.string   "name"
-    t.string   "thumb_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "inventions", force: :cascade do |t|
