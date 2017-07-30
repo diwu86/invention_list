@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Deployed to  https://rocky-shelf-68271.herokuapp.com/
 
 * TODO/bugs:
 ** needs styling
