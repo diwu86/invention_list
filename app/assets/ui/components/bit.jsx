@@ -59,11 +59,11 @@ export default class Bit extends React.Component {
     const { tags, bitsSuggestions } = this.state;
     const Keys = { COMMA : 188, SPACE: 32};
     let _delimiters = [Keys.COMMA, Keys.SPACE];
-    let placeholder = "Add another bit";
+    let placeholder = "Add bit (at least add one bit)";
     let autocomplete = true;
     return (
 
-      <div className="input-field col s6">
+      <div className="input-field col s6" >
           <ReactTags tags={tags} ref="bits"
             suggestions={bitsSuggestions}
             handleDelete={this.handleDelete}

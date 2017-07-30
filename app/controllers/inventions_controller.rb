@@ -5,31 +5,45 @@ class InventionsController < ApplicationController
   end
 
   def create
-    other_materials = params[:other_materials].map{ |k,v| v }.map{ |e| e[:text] }
-    bits = params[:bits].map{ |k,v| v }.map{ |e| e[:text] }
-    invention = Invention.new(title: params[:title], description: params[:description], user_name: params[:user_name],
-                                 email: params[:email])
-    other_materials_related = []
-    other_materials.each do |om|
-      other_material = OtherMaterial.find_or_create_by(name: om)
-      other_materials_related << other_material
+    invention = Invention.new(invention_params)
+    if params[:body][:other_materials].present?
+      other_materials = params[:body][:other_materials].map{ |k,v| v }.map{ |e| e[:text] }
+      other_materials_related = []
+      other_materials.each do |om|
+        other_material = OtherMaterial.find_or_create_by(name: om)
+        other_materials_related << other_material
+      end
+      invention.other_materials = other_materials_related
     end
-    invention.other_materials = other_materials_related
 
-    bits_related = []
-    bits.each do |b|
-      bit = Bit.find_by(name: b)
-      bits_related << bit
+    if params[:body][:bits].present?
+      bits = params[:body][:bits].map{ |k,v| v }.map{ |e| e[:text] }
+      bits_related = []
+      bits.each do |b|
+        bit = Bit.find_by(name: b)
+        bits_related << bit
+      end
+      invention.bits = bits_related
     end
-    invention.bits = bits_related
 
-    invention.save
-    render json: invention
+
+    begin
+     invention.save!
+      render json: invention
+    rescue => e
+      render json: { :errors => e.message }
+    end
   end
 
   def show
     @invention = Invention.find(params[:id])
     @bits = @invention.bits.map {|b| b[:name] }.join(", ")
     @other_materials = @invention.other_materials.map { |om| om[:name] }.join(", ")
+  end
+
+  private
+
+  def invention_params
+    params.require(:body).permit(:title, :description, :user_name, :email)
   end
 end

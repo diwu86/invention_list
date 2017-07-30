@@ -13977,10 +13977,15 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     };
   }
   addInvention(invention) {
-    $.post("/inventions", invention).success(savedInvention => {
-      let newInventionList = this.state.inventionList;
-      newInventionList.unshift(savedInvention);
-      this.setState({ inventionList: newInventionList });
+    $.post("/inventions", { body: invention }).success(data => {
+      if (data.errors) {
+        alert(data.errors);
+        console.log(data.errors);
+      } else {
+        let newInventionList = this.state.inventionList;
+        newInventionList.unshift(data);
+        this.setState({ inventionList: newInventionList });
+      }
     });
   }
   componentDidMount() {
@@ -26155,10 +26160,10 @@ class InventionBox extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'input-field col s4' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { ref: 'inventionTitle', name: 'title', type: 'text' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { ref: 'inventionTitle', name: 'title', type: 'text', className: 'validate', required: 'required', 'aria-required': 'true' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'label',
-              { 'for': 'title' },
+              { 'for': 'title', 'data-error': 'Title is required' },
               'Title'
             )
           ),
@@ -26178,7 +26183,7 @@ class InventionBox extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { ref: 'inventionEmail', name: 'email', type: 'email', className: 'validate' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'label',
-              { 'for': 'email' },
+              { 'for': 'email', 'data-error': 'Invalid email format' },
               'Email'
             )
           )
@@ -26189,26 +26194,12 @@ class InventionBox extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'input-field col s12' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { ref: 'inventionDescription', name: 'description', type: 'text', className: 'validate' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { ref: 'inventionDescription', name: 'description', type: 'text', className: 'validate', required: 'required', 'aria-required': 'true' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'label',
-              { 'for': 'description' },
+              { 'for': 'description', 'data-error': 'Description is required' },
               'Description'
             )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'row' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'label',
-            { 'for': 'description', className: 'col s6' },
-            'Bits Used'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'label',
-            { 'for': 'description', className: 'col s6' },
-            'Other Materials Used'
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -26307,7 +26298,7 @@ class OtherMaterial extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
     const { tags, suggestions } = this.state;
     const Keys = { COMMA: 188, SPACE: 32 };
     let delimiters = [Keys.COMMA, Keys.SPACE];
-    let placeholder = "Add another material";
+    let placeholder = "Add other material";
     let autocomplete = true;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
@@ -34133,7 +34124,7 @@ class Bit extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     const { tags, bitsSuggestions } = this.state;
     const Keys = { COMMA: 188, SPACE: 32 };
     let _delimiters = [Keys.COMMA, Keys.SPACE];
-    let placeholder = "Add another bit";
+    let placeholder = "Add bit (at least add one bit)";
     let autocomplete = true;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',

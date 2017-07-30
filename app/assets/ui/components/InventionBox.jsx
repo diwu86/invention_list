@@ -29,30 +29,26 @@ export default class InventionBox extends React.Component {
          <form onSubmit={this.postInvention.bind(this)}>
            <div className="row">
              <div className="input-field col s4">
-               <input ref="inventionTitle" name="title" type="text"  />
-               <label for="title">Title</label>
+               <input ref="inventionTitle" name="title" type="text" className="validate" required="required" aria-required="true"/>
+               <label for="title" data-error="Title is required" >Title</label>
              </div>
              <div className="input-field col s4">
                <input ref="inventionUserName" name="user_name" type="text" className="validate" />
                <label for="user_name">User Name</label>
              </div>
              <div className="input-field col s4">
-               <input ref="inventionEmail" name="email" type="email" className="validate" />
-               <label for="email">Email</label>
+               <input ref="inventionEmail" name="email" type="email" className="validate"  />
+               <label for="email" data-error="Invalid email format" >Email</label>
              </div>
            </div>
            <div className="row">
              <div className="input-field col s12">
-               <input ref="inventionDescription" name="description" type="text" className="validate" />
-               <label for="description">Description</label>
+               <input ref="inventionDescription" name="description" type="text" className="validate" required="required" aria-required="true"/>
+               <label for="description" data-error="Description is required">Description</label>
              </div>
            </div>
-           <div className='row'>
-              <label for="description" className="col s6">Bits Used</label>
-              <label for="description" className="col s6">Other Materials Used</label>
-           </div>
            <div className="row">
-             <Bit ref="inventionBits"/>
+             <Bit ref="inventionBits" />
              <OtherMaterial  ref="inventionOtherMaterials"/>
            </div>
            <button type="submit" className="btn right">Submit</button>

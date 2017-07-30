@@ -66,7 +66,7 @@ export default class OtherMaterial extends React.Component {
     const { tags, suggestions } = this.state;
     const Keys = { COMMA : 188, SPACE: 32};
     let delimiters = [Keys.COMMA, Keys.SPACE];
-    let placeholder = "Add another material";
+    let placeholder = "Add other material";
     let autocomplete = true;
     return (
         <div className="input-field col s6">

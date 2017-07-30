@@ -4,5 +4,5 @@ class Invention < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  #validates :bits, presence: true
+  validates :bits, presence: true
 end

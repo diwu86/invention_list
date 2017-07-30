@@ -22,12 +22,19 @@ class Main extends React.Component {
       };
     }
     addInvention(invention){
-      $.post("/inventions", invention)
-      .success( savedInvention => {
-        let newInventionList = this.state.inventionList;
-        newInventionList.unshift(savedInvention);
-        this.setState({ inventionList: newInventionList});
+      $.post("/inventions", {body: invention})
+      .success( data => {
+          if(data.errors){
+              alert(data.errors);
+              console.log(data.errors);
+          }else{
+              let newInventionList = this.state.inventionList;
+              newInventionList.unshift(data);
+              this.setState({ inventionList: newInventionList});
+          }
+
       })
+
     }
     componentDidMount(){
       $.ajax("/inventions")
