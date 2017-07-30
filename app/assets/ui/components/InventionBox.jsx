@@ -43,7 +43,7 @@ export default class InventionBox extends React.Component {
            </div>
            <div className="row">
              <div className="input-field col s12">
-               <input ref="inventionDescription" name="description" type="text" className="validate" required="required" aria-required="true"/>
+               <textarea ref="inventionDescription" name="description" type="text" className="validate" required="required" aria-required="true"/>
                <label for="description" data-error="Description is required">Description</label>
              </div>
            </div>

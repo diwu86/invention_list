@@ -26188,7 +26188,7 @@ class InventionBox extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'input-field col s12' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { ref: 'inventionDescription', name: 'description', type: 'text', className: 'validate', required: 'required', 'aria-required': 'true' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { ref: 'inventionDescription', name: 'description', type: 'text', className: 'validate', required: 'required', 'aria-required': 'true' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'label',
               { 'for': 'description', 'data-error': 'Description is required' },
