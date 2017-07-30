@@ -1,0 +1,103 @@
+/* line 9, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__tag {
+  display: inline-block;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: #e4e4e4;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+/* line 22, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__tag > img {
+  float: left;
+  margin: 0 8px 0 -12px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+/* line 31, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__remove {
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+  line-height: 32px;
+  padding-left: 8px;
+}
+
+/* Example Styles for React Tags*/
+/* line 40, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__tags {
+  position: relative;
+}
+
+/* Styles for the input */
+/* line 45, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__tagInput {
+  width: 200px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* Styles for selected tags */
+/* line 54, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__selected a.ReactTags__remove {
+  color: #aaa;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Styles for suggestions */
+/* line 61, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__suggestions {
+  position: absolute;
+}
+
+/* line 64, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__suggestions ul {
+  list-style-type: none;
+  box-shadow: 0.05em 0.01em 0.5em rgba(0, 0, 0, 0.2);
+  background: white;
+  width: 200px;
+}
+
+/* line 70, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__suggestions li {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+/* line 75, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__suggestions li mark {
+  text-decoration: underline;
+  background: none;
+  font-weight: 600;
+}
+
+/* line 80, /Users/diwu/Projects/rails/invention_list/app/assets/stylesheets/inventions.scss */
+.ReactTags__suggestions ul li.ReactTags__activeSuggestion {
+  background: #b7cfe0;
+  cursor: pointer;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
