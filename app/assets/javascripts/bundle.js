@@ -1625,16 +1625,6 @@ module.exports = ReactUpdates;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-module.exports = __webpack_require__(180);
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1903,7 +1893,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var freeGlobal = __webpack_require__(128);
@@ -1915,6 +1905,16 @@ var freeSelf = typeof self == 'object' && self && self.Object === Object && self
 var root = freeGlobal || freeSelf || Function('return this')();
 
 module.exports = root;
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(180);
 
 
 /***/ }),
@@ -3734,7 +3734,7 @@ module.exports = EventPluginHub;
 
 
 
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 
 var getEventTarget = __webpack_require__(61);
 
@@ -5100,7 +5100,7 @@ module.exports = ReactBrowserEventEmitter;
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(17);
+var root = __webpack_require__(16);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -7608,7 +7608,7 @@ module.exports = MapCache;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(24),
-    root = __webpack_require__(17);
+    root = __webpack_require__(16);
 
 /* Built-in method references that are verified to be native. */
 var Map = getNative(root, 'Map');
@@ -11706,7 +11706,7 @@ var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(15);
+var _reactDom = __webpack_require__(17);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -13099,7 +13099,7 @@ module.exports = baseUniq;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(24),
-    root = __webpack_require__(17);
+    root = __webpack_require__(16);
 
 /* Built-in method references that are verified to be native. */
 var Set = getNative(root, 'Set');
@@ -13620,7 +13620,7 @@ module.exports = arrayLikeKeys;
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(17),
+/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(16),
     stubFalse = __webpack_require__(354);
 
 /** Detect free variable `exports`. */
@@ -13838,7 +13838,7 @@ module.exports = equalArrays;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(24),
-    root = __webpack_require__(17);
+    root = __webpack_require__(16);
 
 /* Built-in method references that are verified to be native. */
 var WeakMap = getNative(root, 'WeakMap');
@@ -13948,12 +13948,10 @@ module.exports = getFuncName;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_InventionBox__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_InventionList__ = __webpack_require__(405);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_InventionDetail__ = __webpack_require__(407);
-
 
 
 
@@ -14007,10 +14005,6 @@ let documentReady = () => {
     __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Main, null), reactNode);
   }
   $('.collapsible').collapsible();
-  let reactInventionDetail = document.getElementById('InventionDetail');
-  if (reactInventionDetail) {
-    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_InventionDetail__["a" /* default */], null), reactInventionDetail);
-  }
 };
 
 $(documentReady);
@@ -16753,7 +16747,7 @@ module.exports = FallbackCompositionState;
 
 
 
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 
 /**
  * @interface Event
@@ -16794,7 +16788,7 @@ module.exports = SyntheticCompositionEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 
 /**
  * @interface Event
@@ -16841,7 +16835,7 @@ var EventPropagators = __webpack_require__(31);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(14);
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 
 var inputValueTracking = __webpack_require__(106);
 var getEventTarget = __webpack_require__(61);
@@ -24643,7 +24637,7 @@ var EventPropagators = __webpack_require__(31);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInputSelection = __webpack_require__(121);
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 
 var getActiveElement = __webpack_require__(122);
 var isTextInputElement = __webpack_require__(107);
@@ -24840,7 +24834,7 @@ var EventPropagators = __webpack_require__(31);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticAnimationEvent = __webpack_require__(246);
 var SyntheticClipboardEvent = __webpack_require__(247);
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 var SyntheticFocusEvent = __webpack_require__(248);
 var SyntheticKeyboardEvent = __webpack_require__(249);
 var SyntheticMouseEvent = __webpack_require__(41);
@@ -25064,7 +25058,7 @@ module.exports = SimpleEventPlugin;
 
 
 
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 
 /**
  * @interface Event
@@ -25108,7 +25102,7 @@ module.exports = SyntheticAnimationEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 
 /**
  * @interface Event
@@ -25489,7 +25483,7 @@ module.exports = SyntheticTouchEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(16);
+var SyntheticEvent = __webpack_require__(15);
 
 /**
  * @interface Event
@@ -26118,7 +26112,7 @@ module.exports = ReactDOMInvalidARIAHook;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__otherMaterial__ = __webpack_require__(266);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bit__ = __webpack_require__(404);
@@ -26227,7 +26221,7 @@ class InventionBox extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_tag_input__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_tag_input___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_tag_input__);
@@ -26299,7 +26293,6 @@ class OtherMaterial extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
     const Keys = { COMMA: 188, SPACE: 32 };
     let delimiters = [Keys.COMMA, Keys.SPACE];
     let placeholder = "Add other material";
-    let autocomplete = true;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'input-field col s6' },
@@ -26310,8 +26303,7 @@ class OtherMaterial extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
         handleAddition: this.handleAddition,
         handleDrag: this.handleDrag,
         delimiters: delimiters,
-        placeholder: placeholder,
-        autocomplete: autocomplete })
+        placeholder: placeholder })
     );
   }
 }
@@ -27283,7 +27275,7 @@ module.exports = isMasked;
 /* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(17);
+var root = __webpack_require__(16);
 
 /** Used to detect overreaching core-js shims. */
 var coreJsData = root['__core-js_shared__'];
@@ -33026,7 +33018,7 @@ module.exports = equalByTag;
 /* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(17);
+var root = __webpack_require__(16);
 
 /** Built-in value references. */
 var Uint8Array = root.Uint8Array;
@@ -33426,7 +33418,7 @@ module.exports = getTag;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(24),
-    root = __webpack_require__(17);
+    root = __webpack_require__(16);
 
 /* Built-in method references that are verified to be native. */
 var DataView = getNative(root, 'DataView');
@@ -33439,7 +33431,7 @@ module.exports = DataView;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(24),
-    root = __webpack_require__(17);
+    root = __webpack_require__(16);
 
 /* Built-in method references that are verified to be native. */
 var Promise = getNative(root, 'Promise');
@@ -33462,7 +33454,7 @@ var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(15);
+var _reactDom = __webpack_require__(17);
 
 var _reactDnd = __webpack_require__(126);
 
@@ -34059,7 +34051,7 @@ module.exports = copyArray;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_tag_input__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_tag_input___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_tag_input__);
@@ -34150,7 +34142,7 @@ class Bit extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Invention__ = __webpack_require__(406);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -34162,16 +34154,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 class InventionList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   render() {
     let inventions = this.props.inventions.map(invention => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Invention__["a" /* default */], _extends({ key: invention.id }, invention)));
-    return (
-      // <ul className="collapsible" data-collapsible="accordion">
-      //   {inventions}
-      // </ul>
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'collection' },
-        inventions
-      )
-    );
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'ul',
+      { className: 'collapsible', 'data-collapsible': 'accordion' },
+      inventions
+    )
+    //<div className="collection">
+    //  {inventions}
+    //</div>
+    ;
   }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = InventionList;
@@ -34184,70 +34175,60 @@ class InventionList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 
 
 class Invention extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'a',
-      { href: "/inventions/" + this.props.id, className: 'collection-item' },
-      this.props.title
-    )
-    // <li>
-    //   <div className="collapsible-header">{this.props.title}</div>
-    //   <div className="collapsible-body">
-    //   <ul class="collection">
-    //     <li class="collection-item">Descritpion: {this.props.description}</li>
-    //     <li class="collection-item">Submitted by: {this.props.user_name}</li>
-    //     <li class="collection-item">Bits used: {this.props.formattedBits}</li>
-    //     </ul>
-    //   </div>
-    // </li>
-    ;
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Invention;
-
-
-/***/ }),
-/* 407 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-
-
-class InventionDetail extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  render() {
-    let _invention;
-    $.ajax("/inventions/3").success(data => _invention = data).error(error => console.log(error));
     return (
-      // TODO
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'p',
-        null,
-        'detail'
-      )
-      // <li>
-      //   <div className="collapsible-header">{_invention.title}</div>
-      //   <div className="collapsible-body">
-      //   <ul className="collection">
-      //     <li className="collection-item">Descritpion: {_invention.description}</li>
-      //     <li className="collection-item">Submitted by: {_invention.user_name}</li>
-      //     <li className="collection-item">Bits used: {_invention.description}</li>
-      //     </ul>
-      //   </div>
-      // </li>
 
+      // <a href={"/inventions/" +this.props.id} className="collection-item">{this.props.title}</a>
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'li',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'collapsible-header' },
+          this.props.title
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'collapsible-body' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'ul',
+            { 'class': 'collection' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'li',
+              { 'class': 'collection-item' },
+              'Descritpion: ',
+              this.props.description
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'li',
+              { 'class': 'collection-item' },
+              'Submitted by: ',
+              this.props.user_name
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'li',
+              { 'class': 'collection-item' },
+              'Bits used: ',
+              this.props.bits
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'li',
+              { 'class': 'collection-item' },
+              'Other materials used: ',
+              this.props.other_materials
+            )
+          )
+        )
+      )
     );
   }
 }
-/* harmony export (immutable) */ __webpack_exports__["a"] = InventionDetail;
+/* harmony export (immutable) */ __webpack_exports__["a"] = Invention;
 
 
 /***/ })

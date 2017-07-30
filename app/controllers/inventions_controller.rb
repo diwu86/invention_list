@@ -1,7 +1,11 @@
 require 'pry'
 class InventionsController < ApplicationController
   def index
-    render json: Invention.order(created_at: :desc).all
+     inventions = []
+     Invention.order(created_at: :desc).includes(:bits).includes(:other_materials).all.each do |invention|
+        inventions << format_invention(invention)
+     end
+     render json: inventions
   end
 
   def create
@@ -29,21 +33,27 @@ class InventionsController < ApplicationController
 
     begin
      invention.save!
-      render json: invention
+
+      render json: format_invention(invention)
     rescue => e
       render json: { :errors => e.message }
     end
-  end
-
-  def show
-    @invention = Invention.find(params[:id])
-    @bits = @invention.bits.map {|b| b[:name] }.join(", ")
-    @other_materials = @invention.other_materials.map { |om| om[:name] }.join(", ")
   end
 
   private
 
   def invention_params
     params.require(:body).permit(:title, :description, :user_name, :email)
+  end
+
+  def format_invention(invention)
+    {
+        title: invention.title,
+        description: invention.description,
+        user_name: invention.user_name,
+        email: invention.email,
+        bits: invention.bits.map { |b| b[:name] }.join(", "),
+        other_materials: invention.other_materials.map{ |om| om[:name] }.join(", ")
+    }
   end
 end

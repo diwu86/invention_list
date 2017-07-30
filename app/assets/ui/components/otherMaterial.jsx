@@ -67,7 +67,6 @@ export default class OtherMaterial extends React.Component {
     const Keys = { COMMA : 188, SPACE: 32};
     let delimiters = [Keys.COMMA, Keys.SPACE];
     let placeholder = "Add other material";
-    let autocomplete = true;
     return (
         <div className="input-field col s6">
           <ReactTags tags={tags}
@@ -77,8 +76,7 @@ export default class OtherMaterial extends React.Component {
             handleAddition={this.handleAddition}
             handleDrag={this.handleDrag}
             delimiters={delimiters}
-            placeholder={placeholder}
-            autocomplete={autocomplete} />
+            placeholder={placeholder} />
         </div>
     )
   }

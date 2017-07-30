@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import InventionBox from './components/InventionBox';
 import InventionList from './components/InventionList';
-import InventionDetail from './components/InventionDetail';
 
 class Main extends React.Component {
     constructor(props){
@@ -60,13 +59,6 @@ let documentReady = () => {
     );
   }
   $('.collapsible').collapsible();
-  let reactInventionDetail = document.getElementById('InventionDetail');
-  if(reactInventionDetail){
-    ReactDOM.render(
-        <InventionDetail />,
-        reactInventionDetail
-    );
-  }
 };
 
 $(documentReady);
