@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import OtherMaterial from './otherMaterial';
 import Bit from './bit';
+import FileUploader from './fileUploader';
 
 export default class InventionBox extends React.Component {
 
@@ -12,7 +13,8 @@ export default class InventionBox extends React.Component {
                      user_name: this.refs.inventionUserName.value,
                      email: this.refs.inventionEmail.value,
                      bits: this.refs.inventionBits.refs.bits.props.tags,
-                     other_materials: this.refs.inventionOtherMaterials.refs.otherMaterialTags.props.tags
+                     other_materials: this.refs.inventionOtherMaterials.refs.otherMaterialTags.props.tags,
+                     image: this.refs.inventionImage.state.uploadedFileThumbUrl
                      };
     this.props.postInvention(invention);
     this.refs.inventionTitle.value = '';
@@ -21,6 +23,7 @@ export default class InventionBox extends React.Component {
     this.refs.inventionEmail.value = '';
     this.refs.inventionBits.clearTags();
     this.refs.inventionOtherMaterials.clearTags();
+    this.refs.inventionImage.clearPic();
   }
 
   render() {
@@ -51,6 +54,7 @@ export default class InventionBox extends React.Component {
              <Bit ref="inventionBits" />
              <OtherMaterial  ref="inventionOtherMaterials"/>
            </div>
+           <FileUploader ref="inventionImage" state={this.state}/>
            <button type="submit" className="btn right">Submit</button>
          </form>
        </div>

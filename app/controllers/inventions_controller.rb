@@ -43,15 +43,17 @@ class InventionsController < ApplicationController
   private
 
   def invention_params
-    params.require(:body).permit(:title, :description, :user_name, :email)
+    params.require(:body).permit(:title, :description, :user_name, :email, :image)
   end
 
   def format_invention(invention)
     {
+        id: invention.id,
         title: invention.title,
         description: invention.description,
         user_name: invention.user_name,
         email: invention.email,
+        image: invention.image,
         bits: invention.bits.map { |b| b[:name] }.join(", "),
         other_materials: invention.other_materials.map{ |om| om[:name] }.join(", ")
     }
