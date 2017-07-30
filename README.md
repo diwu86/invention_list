@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -7,14 +6,18 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+ 2.3.0
+* Rails 5
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+  rake db:migrate
 
 * Database initialization
+  rake db:seed
 
 * How to run the test suite
 
@@ -23,6 +26,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# invention_list
->>>>>>> b6aabbfd6ddbb573210380c3781b9b85e7b285e0
+
