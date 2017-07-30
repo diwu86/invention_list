@@ -61,6 +61,7 @@ export default class Bit extends React.Component {
     let _delimiters = [Keys.COMMA, Keys.SPACE];
     let placeholder = "Add bit (at least add one bit)";
     let autocomplete = true;
+      let minQueryLength = 1;
     return (
 
       <div className="input-field col s6" >
@@ -71,7 +72,8 @@ export default class Bit extends React.Component {
             handleDrag={this.handleDrag}
             delimiters={_delimiters}
             autocomplete={autocomplete}
-            placeholder={placeholder} />
+            placeholder={placeholder}
+            minQueryLength={minQueryLength} />
       </div>
     )
   }

@@ -37894,6 +37894,7 @@ class OtherMaterial extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
     const Keys = { COMMA: 188, SPACE: 32 };
     let delimiters = [Keys.COMMA, Keys.SPACE];
     let placeholder = "Add other material";
+    let minQueryLength = 1;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'input-field col s6' },
@@ -37904,7 +37905,8 @@ class OtherMaterial extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
         handleAddition: this.handleAddition,
         handleDrag: this.handleDrag,
         delimiters: delimiters,
-        placeholder: placeholder })
+        placeholder: placeholder,
+        minQueryLength: minQueryLength })
     );
   }
 }
@@ -45719,6 +45721,7 @@ class Bit extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     let _delimiters = [Keys.COMMA, Keys.SPACE];
     let placeholder = "Add bit (at least add one bit)";
     let autocomplete = true;
+    let minQueryLength = 1;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'input-field col s6' },
@@ -45729,7 +45732,8 @@ class Bit extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         handleDrag: this.handleDrag,
         delimiters: _delimiters,
         autocomplete: autocomplete,
-        placeholder: placeholder })
+        placeholder: placeholder,
+        minQueryLength: minQueryLength })
     );
   }
 }
@@ -48753,50 +48757,54 @@ class InventionList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
 
 
 class Invention extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'li',
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'collapsible-header' },
-        this.props.title
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'collapsible-body' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'ul',
-          { className: 'col s4 collection' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    render() {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
-            { className: 'collection-item' },
-            'Descritpion: ',
-            this.props.description
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            { className: 'collection-item' },
-            'Submitted by: ',
-            this.props.user_name
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            { className: 'collection-item' },
-            'Bits used: ',
-            this.props.bits
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            { className: 'collection-item' },
-            'Other materials used: ',
-            this.props.other_materials
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'col s4', src: this.props.image })
-      )
-    );
-  }
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'collapsible-header' },
+                this.props.title
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'collapsible-body row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col s8' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        null,
+                        'Descritpion: ',
+                        this.props.description
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        null,
+                        'Submitted by: ',
+                        this.props.user_name
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        null,
+                        'Bits used: ',
+                        this.props.bits
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        null,
+                        'Other materials used: ',
+                        this.props.other_materials
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col s4 ' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: this.props.image })
+                )
+            )
+        );
+    }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Invention;
 
