@@ -25,12 +25,13 @@ Things you may want to cover:
 
 * Deployed to  https://rocky-shelf-68271.herokuapp.com/
 
-* TODO/bugs:
-** needs styling
-** needs spec tests
-** thinking moving invention show as a separate page
-** Mobile use: space does not work, different key code for mobile?
-** first landing in the page, other material is focused
-** image as a table for full url and thumb url?
-** storage should go to AWS s3, Azure blob storage or other cloud storage rather than in app
+### TODO/bugs:
 
+* needs styling
+* needs spec tests
+* thinking moving invention show as a separate page
+* Mobile use: space does not work, different key code for mobile?
+* first landing in the page, other material is focused
+* image as a table for full url and thumb url?
+* storage should go to AWS s3, Azure blob storage or other cloud storage rather than in app. Heroku is cleaning out all the uploaded files every hour. Also file name should be tied with a guid like a session id so it can be uniq.
+* need error handlering and logging
