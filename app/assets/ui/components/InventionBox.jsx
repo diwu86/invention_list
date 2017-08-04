@@ -17,6 +17,9 @@ export default class InventionBox extends React.Component {
                      image: this.refs.inventionImage.state.uploadedFileThumbUrl
                      };
     this.props.postInvention(invention);
+  }
+
+  clearInput(){
     this.refs.inventionTitle.value = '';
     this.refs.inventionDescription.value = '';
     this.refs.inventionUserName.value = '';

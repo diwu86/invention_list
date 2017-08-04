@@ -30,8 +30,8 @@ class Main extends React.Component {
               let newInventionList = this.state.inventionList;
               newInventionList.unshift(data);
               this.setState({ inventionList: newInventionList});
+              this.refs.invBox.clearInput();
           }
-
       })
 
     }
@@ -43,7 +43,7 @@ class Main extends React.Component {
     render() {
         return (
           <div className="container">
-            <InventionBox postInvention={this.addInvention.bind(this)}/>
+            <InventionBox postInvention={this.addInvention.bind(this)} ref="invBox"/>
             <InventionList inventions={this.state.inventionList}/>
           </div>
         );

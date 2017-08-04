@@ -14002,6 +14002,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         let newInventionList = this.state.inventionList;
         newInventionList.unshift(data);
         this.setState({ inventionList: newInventionList });
+        this.refs.invBox.clearInput();
       }
     });
   }
@@ -14012,7 +14013,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'container' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_InventionBox__["a" /* default */], { postInvention: this.addInvention.bind(this) }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_InventionBox__["a" /* default */], { postInvention: this.addInvention.bind(this), ref: 'invBox' }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_InventionList__["a" /* default */], { inventions: this.state.inventionList })
     );
   }
@@ -26155,6 +26156,9 @@ class InventionBox extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
       image: this.refs.inventionImage.state.uploadedFileThumbUrl
     };
     this.props.postInvention(invention);
+  }
+
+  clearInput() {
     this.refs.inventionTitle.value = '';
     this.refs.inventionDescription.value = '';
     this.refs.inventionUserName.value = '';
